@@ -3,14 +3,11 @@
 
 **当前版本:@钊@**
 
+另有更稳定、更可靠、更强大的付费版本，点这里了解。[付费版本README](https://github.com/Mocha-L/WechatPCAPI/blob/master/README-BO.md)
+
 **如果帮到你，帮我点个star。**
 遇到问题可以提Issues，或关注公众号“燕幕自安”联系我。
 
-## 20191205更新
-
-1. 新增群成员获取接口
-2. 修改了test示例
-3. 新增catch异常
 
 ## 延伸项目
 
