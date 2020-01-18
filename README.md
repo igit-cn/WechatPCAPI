@@ -3,6 +3,8 @@
 
 **当前版本:@钊@**
 
+当前版本是免费版本
+
 另有更稳定、更可靠、更强大的付费版本，点这里了解。[付费版本README](https://github.com/Mocha-L/WechatPCAPI/blob/master/README-BO.md)
 
 **如果帮到你，帮我点个star。**
