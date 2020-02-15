@@ -47,6 +47,13 @@
 2. 安装源码包里的微信客户端WeChatSetup2.6.8.52.exe（和免费版微信客户端版本不同，请注意）
 3. 执行源码中的test.py
 
+**依赖库**
+  
+  pip install pycryptodomex
+  
+  pip install requests
+  
+  
 目前提供pyd和依赖的相关文件，通过python直接import即可使用，目录里的test.py即是调用示例。
 
 ## 环境支持情况
