@@ -17,6 +17,8 @@
 
 https://github.com/elliot-bia/msg_reply
 
+https://github.com/mortimer-cra/AlarmRobot （微信提醒喵）
+
 ## 功能列表
 
 目前支持：
