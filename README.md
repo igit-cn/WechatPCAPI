@@ -17,6 +17,8 @@
 
 https://github.com/elliot-bia/msg_reply
 
+https://github.com/mortimer-cra/AlarmRobot
+
 ## 功能列表
 
 目前支持：
