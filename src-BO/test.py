@@ -23,7 +23,8 @@ def on_message(message):
 
 
 def main():
-    help(WechatPCAPI)
+    # 查看支持的接口信息
+    # help(WechatPCAPI)
 
     wx_inst = WechatPCAPI(on_message=on_message, log=logging)
     wx_inst.start_wechat(block=True)
@@ -35,12 +36,18 @@ def main():
     print(wx_inst.get_myself())
 
     time.sleep(10)
-    wx_inst.send_text_and_at_someone('22941059407@chatroom', 'wxid_6ij99jtd6s4722', '车臣', '你好')
-    time.sleep(2)
-    wx_inst.send_text_and_at_someone('22941059407@chatroom', 'wxid_6ij99jtd6s4722', '车臣', 'aaasss')
+
+    # 开启保存文件图片等功能，不调用默认不保存，调用需要放在登陆成功之后
+    # wx_inst.start_auto_save_files()
+    # 发送消息并@某人
+    # wx_inst.send_text_and_at_someone('22941059407@chatroom', 'wxid_6ij99jtd6s4722', '车臣', '你好')
+    # time.sleep(2)
+    # 发送消息
     # wx_inst.send_text(to_user='filehelper', msg='作者QQ:\r1446684220')
+    # 发图片
     # wx_inst.send_img(to_user='filehelper', img_abspath=r'C:\Users\Leon\Pictures\1.jpg')
     # time.sleep(1)
+    # 发分享链接
     # wx_inst.send_link_card(
     #     to_user='filehelper',
     #     title='博客',
