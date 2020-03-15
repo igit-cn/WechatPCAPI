@@ -17,25 +17,14 @@ logging.basicConfig(level=logging.INFO)
 queue_recved_message = Queue()
 
 
+# 这是消息回调函数，所有的返回消息都在这里接收，建议异步处理，防止阻塞
 def on_message(message):
-    queue_recved_message.put(message)
-
-
-# 消息处理示例 仅供参考
-def thread_handle_message(wx_inst):
-    while True:
-        message = queue_recved_message.get()
-        print(message)
-        if 'msg' in message.get('type'):
-            # 这里是判断收到的是消息 不是别的响应
-            msg_content = message.get('data', {}).get('msg', '')
-            send_or_recv = message.get('data', {}).get('send_or_recv', '')
-            if send_or_recv[0] == '0':
-                # 0是收到的消息 1是发出的 对于1不要再回复了 不然会无限循环回复
-                wx_inst.send_text('filehelper', '收到消息:{}'.format(msg_content))
+    print(message)
 
 
 def main():
+    help(WechatPCAPI)
+
     wx_inst = WechatPCAPI(on_message=on_message, log=logging)
     wx_inst.start_wechat(block=True)
 
@@ -45,10 +34,15 @@ def main():
     print('登陆成功')
     print(wx_inst.get_myself())
 
-    threading.Thread(target=thread_handle_message, args=(wx_inst,)).start()
-
     time.sleep(10)
-    wx_inst.send_text(to_user='filehelper', msg='777888999')
+
+    # 开启保存文件图片等功能，不调用默认不保存，调用需要放在登陆成功之后
+    wx_inst.start_auto_save_files()
+    # wx_inst.send_text_and_at_someone('22941059407@chatroom', 'wxid_6ij99jtd6s4722', '车臣', '你好')
+    # time.sleep(2)
+    # wx_inst.send_text_and_at_someone('22941059407@chatroom', 'wxid_6ij99jtd6s4722', '车臣', 'aaasss')
+    # wx_inst.send_text(to_user='filehelper', msg='作者QQ:\r1446684220')
+    # wx_inst.send_img(to_user='filehelper', img_abspath=r'C:\Users\Leon\Pictures\1.jpg')
     # time.sleep(1)
     # wx_inst.send_link_card(
     #     to_user='filehelper',
@@ -58,26 +52,18 @@ def main():
     #     img_url='http://honglingjin.online/wp-content/uploads/2019/07/0-1562117907.jpeg'
     # )
     # time.sleep(1)
-    #
-    # wx_inst.send_img(to_user='filehelper', img_abspath=r'C:\Users\Leon\Pictures\1.jpg')
-    # time.sleep(1)
-    #
-    # wx_inst.send_file(to_user='filehelper', file_abspath=r'C:\Users\Leon\Desktop\1.txt')
-    # time.sleep(1)
-    #
-    # wx_inst.send_gif(to_user='filehelper', gif_abspath=r'C:\Users\Leon\Desktop\08.gif')
-    # time.sleep(1)
-    #
-    # wx_inst.send_card(to_user='filehelper', wx_id='gh_6ced1cafca19')
 
     # 这个是获取群具体成员信息的，成员结果信息也从上面的回调返回
-    wx_inst.get_member_of_chatroom('22941059407@chatroom')
+    # wx_inst.get_member_of_chatroom('22941059407@chatroom')
 
-    # 新增@群里的某人的功能
-    wx_inst.send_text(to_user='22941059407@chatroom', msg='test for at someone', at_someone='wxid_6ij99jtd6s4722')
+    # # 删除好友
+    # wx_inst.get_friends("wx_123231212121")  # 参数写wxid
 
-    # 这个是更新所有好友、群、公众号信息的，结果信息也从上面的回调返回
+    # # 更新好友 一般不用调，后台会维护好友表，但是不放心表不准，可以先调用这个再调get_friends
     # wx_inst.update_frinds()
+
+    # 这个是更新所有好友、群、公众号信息的，结果信息也从上面的on_message返回
+    # wx_inst.get_friends()
 
 
 if __name__ == '__main__':
