@@ -56,7 +56,7 @@ python 3.7.4 不是该版本可能会报错dll load 错误
 
 现在不支持百度网盘更新了，请进群获取最新版本代码和相关文件，有问题也可以在群里咨询讨论。
 
-**QQ群：579737590**
+**QQ群：579737590**(广告实在太多了，加了1元付费入群)
 
 ![QQ群](https://github.com/Mocha-L/wechat_wegoing/blob/master/image/qq.png)
 
