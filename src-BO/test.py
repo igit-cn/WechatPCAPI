@@ -22,11 +22,11 @@ def on_message(message):
     print(message)
     message_data = message.get('data')
     # 这里是判断是否是转账消息 如果是转账消息存起来 由其他线程判断是否收款
-    if message_data and message_data.get('data_type') == '49' and message_data.get('is_recv') and '<title><![CDATA[微信转账]]></title>' in message_data.get('msgcontent'):
+    if message_data and isinstance(message_data, dict) and message_data.get('data_type') == '49' and message_data.get('is_recv') and '<title><![CDATA[微信转账]]></title>' in message_data.get('msgcontent'):
         queue_recved_event.put((0, message))
-    if message_data and message_data.get('data_type') == '37' and message_data.get('is_recv'):
+    if message_data and isinstance(message_data, dict) and message_data.get('data_type') == '37' and message_data.get('is_recv'):
         queue_recved_event.put((1, message))
-    if message_data and message_data.get('data_type') == '49' and message_data.get('is_recv') and '<title><![CDATA[邀请你加入群聊]]></title>' in message_data.get('msgcontent'):
+    if message_data and isinstance(message_data, dict) and message_data.get('data_type') == '49' and message_data.get('is_recv') and '<title><![CDATA[邀请你加入群聊]]></title>' in message_data.get('msgcontent'):
         queue_recved_event.put((2, message))
 
 
@@ -43,12 +43,12 @@ def main():
     print('登陆成功')
     print(wx_inst.get_myself())
 
-    time.sleep(10)
+    time.sleep(15)
 
 
 
     # 开启保存文件图片等功能，不调用默认不保存，调用需要放在登陆成功之后
-    # wx_inst.start_auto_save_files()
+    wx_inst.start_auto_save_files()
     # 发送消息并@某人
     # wx_inst.send_text_and_at_someone('22941059407@chatroom', 'wxid_6ij99jtd6s4722', '车臣', '你好')
     # time.sleep(2)
@@ -71,13 +71,19 @@ def main():
     # wx_inst.get_member_of_chatroom('22941059407@chatroom')
 
     # # 删除好友
-    # wx_inst.get_friends("wx_123231212121")  # 参数写wxid
+    # wx_inst.delete_frinds("wx_123231212121")  # 参数写wxid
 
     # # 更新好友 一般不用调，后台会维护好友表，但是不放心表不准，可以先调用这个再调get_friends
     # wx_inst.update_frinds()
 
     # 这个是更新所有好友、群、公众号信息的，结果信息也从上面的on_message返回
     # wx_inst.get_friends()
+
+    # 发送文件或视频
+    wx_inst.send_file('filehelper', r'C:\Users\Leon\Desktop\wechat\1.txt')
+    time.sleep(5)
+    # 查询群成员中特定人的详细信息
+    wx_inst.get_chatroom_member_detail('21644142615@chatroom', 'wxid_nft9am31y67222')
 
     # 接受事件处理
     while True:
