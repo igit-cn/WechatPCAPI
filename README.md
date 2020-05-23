@@ -22,7 +22,7 @@ https://github.com/mortimer-cra/AlarmRobot （微信提醒喵）
 ## 版本功能区别
 
 <img src="https://github.com/Mocha-L/WechatPCAPI/blob/master/%E5%85%8D%E8%B4%B9%E7%89%88%E4%BB%98%E8%B4%B9%E7%89%88%E5%8C%BA%E5%88%AB.png" width="660px" />
-
+看不到图的话，代码目录也有，可以下载查看或进Q群查看。
 
 ## 怎么用？
 
