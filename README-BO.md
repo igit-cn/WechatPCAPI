@@ -34,6 +34,10 @@
 8. 进群提醒和退群提醒、邀请进群提醒
 9. 获取群成员详细信息
 
+## 版本功能区别
+
+<img src="https://github.com/Mocha-L/WechatPCAPI/blob/master/%E5%85%8D%E8%B4%B9%E7%89%88%E4%BB%98%E8%B4%B9%E7%89%88%E5%8C%BA%E5%88%AB.png" width="660px" />
+
 
 ## 怎么用？
 
