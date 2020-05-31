@@ -19,22 +19,10 @@ https://github.com/elliot-bia/msg_reply
 
 https://github.com/mortimer-cra/AlarmRobot （微信提醒喵）
 
-## 功能列表
+## 版本功能区别
 
-目前支持：
-
-1. 微信多开
-2. 获取好友、群、公众号列表
-3. 接收消息（包括好友、群、公众号消息）
-4. 发送消息（支持文本（@某人）、图片、分享链接、文件、名片等格式）
-
-待完成：
-
-1. 公众号关注
-2. 群控功能（建群、拉人进群、退群、踢人、发布群公告等功能）
-3. 加好友、删好友
-4. 反消息撤回等
-
+<img src="https://github.com/Mocha-L/WechatPCAPI/blob/master/%E5%85%8D%E8%B4%B9%E7%89%88%E4%BB%98%E8%B4%B9%E7%89%88%E5%8C%BA%E5%88%AB.png" width="660px" />
+看不到图的话，代码目录也有，可以下载查看或进Q群查看。
 
 ## 怎么用？
 
