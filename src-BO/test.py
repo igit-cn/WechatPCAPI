@@ -30,11 +30,15 @@ def on_message(message):
         queue_recved_event.put((2, message))
 
 
+def on_error():
+    print('error!!!')
+
+
 def main():
     # 查看支持的接口信息
-    # help(WechatPCAPI)
+    help(WechatPCAPI)
 
-    wx_inst = WechatPCAPI(on_message=on_message, log=logging)
+    wx_inst = WechatPCAPI(on_message=on_message, on_wx_exit_handle=on_error,log=logging)
     wx_inst.start_wechat(block=True)
 
     while not wx_inst.get_myself():
@@ -44,8 +48,6 @@ def main():
     print(wx_inst.get_myself())
 
     time.sleep(15)
-
-
 
     # 开启保存文件图片等功能，不调用默认不保存，调用需要放在登陆成功之后
     wx_inst.start_auto_save_files()
@@ -68,7 +70,7 @@ def main():
     # time.sleep(1)
 
     # 这个是获取群具体成员信息的，成员结果信息也从上面的回调返回
-    # wx_inst.get_member_of_chatroom('22941059407@chatroom')
+    wx_inst.get_member_of_chatroom('21644142615@chatroom')
 
     # # 删除好友
     # wx_inst.delete_frinds("wx_123231212121")  # 参数写wxid
@@ -80,7 +82,7 @@ def main():
     # wx_inst.get_friends()
 
     # 发送文件或视频
-    wx_inst.send_file('filehelper', r'C:\Users\Leon\Desktop\wechat\1.txt')
+    # wx_inst.send_file('filehelper', r'C:\Users\Leon\Desktop\wechat\1.txt')
     time.sleep(5)
     # 查询群成员中特定人的详细信息
     wx_inst.get_chatroom_member_detail('21644142615@chatroom', 'wxid_nft9am31y67222')
