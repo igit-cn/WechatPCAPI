@@ -1,5 +1,5 @@
 # WechatPCAPI
-微信PC版的API接口，可通过Python调用微信获取好友、群、公众号列表，并收发消息等功能。可用于二次开发在线微信机器人、微信消息监控、群控软件、开发界面作多个微信控制软件等用途。
+微信PC版的API接口，可通过Python调用微信获取好友、群、公众号列表，并收发消息，接受转账、好友请求、入群请求，群管理等功能。可用于二次开发在线微信机器人、微信消息监控、群控软件、开发界面作多个微信控制软件等用途。
 
 **当前版本:@钊@**
 
@@ -10,14 +10,6 @@
 **如果帮到你，帮我点个star。**
 遇到问题可以提Issues，或关注公众号“燕幕自安”联系我。
 
-
-## 延伸项目
-
-有一些小伙伴在这个项目基础上做了其他功能，我列在下面供大家参考借鉴：
-
-https://github.com/elliot-bia/msg_reply
-
-https://github.com/mortimer-cra/AlarmRobot （微信提醒喵）
 
 ## 版本功能区别
 
@@ -52,6 +44,14 @@ https://github.com/mortimer-cra/AlarmRobot （微信提醒喵）
 | 后续更新           | 不再更新           | 继续维护更新         |
 | 更适合            | 随便玩玩看看         | 项目使用           |
 
+
+## 延伸项目
+
+有一些小伙伴在这个项目基础上做了其他功能，我列在下面供大家参考借鉴：
+
+https://github.com/elliot-bia/msg_reply
+
+https://github.com/mortimer-cra/AlarmRobot （微信提醒喵）
 
 ## 怎么用？
 
