@@ -35,6 +35,10 @@ def on_error():
 
 
 def main():
+    # 初次使用需要pip安装两个库：
+    # pip install requests
+    # pip install pycryptodomex
+    #
     # 查看支持的接口信息
     help(WechatPCAPI)
 
@@ -70,7 +74,7 @@ def main():
     # time.sleep(1)
 
     # 这个是获取群具体成员信息的，成员结果信息也从上面的回调返回
-    wx_inst.get_member_of_chatroom('21644142615@chatroom')
+    # wx_inst.get_member_of_chatroom('21644142615@chatroom')
 
     # # 删除好友
     # wx_inst.delete_frinds("wx_123231212121")  # 参数写wxid
@@ -85,7 +89,26 @@ def main():
     # wx_inst.send_file('filehelper', r'C:\Users\Leon\Desktop\wechat\1.txt')
     time.sleep(5)
     # 查询群成员中特定人的详细信息
-    wx_inst.get_chatroom_member_detail('21644142615@chatroom', 'wxid_nft9am31y67222')
+    # wx_inst.get_chatroom_member_detail('21644142615@chatroom', 'wxid_nft9am31y67222')
+
+    # 备注好友
+    wx_inst.remark_frinds('wxid_6ij99jtd6s4722', '小2')
+
+    time.sleep(2)
+    # 修改群名称
+    wx_inst.modify_group_name('22941059407@chatroom', '新群名')
+
+    time.sleep(2)
+    # 踢出群成员
+    wx_inst.remove_group_member('22941059407@chatroom', 'wxid_6ij99jtd6s4722')
+
+    time.sleep(2)
+    # 修改群公告，会自动@所有人
+    wx_inst.modify_group_notice('22941059407@chatroom', '新公告内容')
+
+    time.sleep(2)
+    # 拉人进群
+    wx_inst.invite_into_group('22941059407@chatroom', 'wxid_6ij99jtd6s4722')
 
     # 接受事件处理
     while True:
